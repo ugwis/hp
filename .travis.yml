@@ -6,7 +6,7 @@ ghc:
 install:
     - cabal update
     - cabal install hakyll
-    - cabal install --only-dependencies --enable-tests
 
 script:
     - ghc site.hs
+    - ./site build
