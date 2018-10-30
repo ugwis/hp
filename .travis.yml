@@ -21,3 +21,6 @@ install:
 script:
     - ghc site.hs
     - ./site build
+
+after_success:
+    - ./push.sh
