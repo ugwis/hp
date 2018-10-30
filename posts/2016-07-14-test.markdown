@@ -1,4 +1,4 @@
 ---
 title: Hello,World !
-date:
+date: 2016-07-14
 ---
