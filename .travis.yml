@@ -2,10 +2,13 @@ language: haskell
 
 ghc: 
     - 7.8
+    - 7.6
+    - 7.4
 
 install:
     - cabal update
     - cabal install hakyll
+    - cabal install --only-dependencies --enable-tests
 
 script:
     - ghc site.hs
