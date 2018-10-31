@@ -5,7 +5,7 @@ cd _site
 git config --global user.email "travis@travis-ci.org"
 git config --global user.name "Travis CI"
 
-git checkout -b gh-pages
+git checkout gh-pages
 git add *
 git commit -m "Travis build: $TRAVIS_BUILD_NUMBER"
 
