@@ -2,14 +2,8 @@ language: haskell
 
 cache:
   directories:
-    - $HOME/.cabal/packages
-    - $HOME/.cabal/store
-    - $HOME/.cabal/bin
-    - $HOME/.stack/bin
-    - $HOME/.stack/precompiled
-    - $HOME/.stack/programs
-    - $HOME/.stack/setup-exe-cache
-    - $HOME/.stack/snapshots
+    - $HOME/.cabal/
+    - $HOME/.stack/
 
 ghc: 
     - 7.8
