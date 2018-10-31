@@ -18,6 +18,9 @@ install:
     - cabal update
     - cabal install hakyll
 
+before_script:
+    - ./pull.sh
+
 script:
     - ghc site.hs
     - ./site build
