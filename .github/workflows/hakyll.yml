@@ -8,15 +8,9 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-haskell@v1.1.4
-        id: setup-haskell-cabal
-        name: Setup Haskell
-        with:
-          ghc-version: 8.6.5
-          cabal-version: 2.4.0.1
       - name: Install dependencies
         run: | 
-          apt install -y ghc libghc-hakyll-dev 
+          sudo apt install -y ghc libghc-hakyll-dev 
       - name: Build gh-pages
         run: | 
           ghc site.hs
