@@ -14,13 +14,13 @@ jobs:
         with:
           ghc-version: 7.8
       - name: Install dependencies
-        run: 
-          - cabal update
-          - cabal install hakyll
+        run: | 
+          cabal update
+          cabal install hakyll
       - name: Build gh-pages
-        run: 
-          - ghc site.hs
-          - ./site build
+        run: | 
+          ghc site.hs
+          ./site build
       - name: Checkout gh-pages branch
         uses: actions/checkout@v2
         with:
