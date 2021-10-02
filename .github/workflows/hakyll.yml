@@ -16,8 +16,7 @@ jobs:
           cabal-version: 2.4.0.1
       - name: Install dependencies
         run: | 
-          cabal update
-          cabal install hakyll
+          apt install -y ghc libghc-hakyll-dev 
       - name: Build gh-pages
         run: | 
           ghc site.hs
