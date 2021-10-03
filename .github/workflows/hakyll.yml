@@ -50,8 +50,8 @@ jobs:
         run: stack --system-ghc build
       - name: Build gh-pages
         run: |
-          stack --system-ghc exec -- gh-pages clean
-          stack --system-ghc exec -- gh-pages build
+          stack --system-ghc exec -- site clean
+          stack --system-ghc exec -- site build
       - name: Checkout gh-pages branch
         uses: actions/checkout@v2
         with:
