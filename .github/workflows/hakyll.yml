@@ -8,14 +8,50 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
+      - name: Cache .stack
+        id: cache-stack
+        uses: actions/cache@v1
+        with:
+          path: ~/.stack
+          key: v1-stack-${{ hashFiles('**/stack.yaml.lock') }}
+          restore-keys: |
+            v1-stack-
+      - name: Cache .stack/pantry
+        id: cache-pantry
+        uses: actions/cache@v1
+        with:
+          path: ~/.stack-temp/pantry
+          key: v1-pantry-${{ hashFiles('**/stack.yaml.lock') }}
+          restore-keys: |
+            v1-pantry-
+      - name: Move .stack/pantry to temp
+        uses: matsubara0507/actions/move-files@master
+        with:
+          source_dir: ~/.stack-temp/pantry
+          source_files: |
+            pantry
+          target_dir: ~/.stack
+      - uses: actions/setup-haskell@v1.1.4
+        id: setup-haskell-cabal
+        name: Setup Haskell
+        with:
+          ghc-version: 8.6.5
+          cabal-version: 2.4.0.1
+          enable-stack: true
+          stack-version: "latest"
+      - name: Install sass
+        run: |
+          wget -O /opt/sass.tar.gz https://github.com/sass/dart-sass/releases/download/1.29.0/dart-sass-1.29.0-linux-x64.tar.gz
+          cd /opt
+          sudo tar xvf sass.tar.gz
+          sudo mv dart-sass/* /usr/local/bin/
+          cd -
       - name: Install dependencies
-        run: | 
-          sudo apt update
-          sudo apt install -y ghc libghc-hakyll-dev 
+        run: stack --system-ghc build
       - name: Build gh-pages
-        run: | 
-          ghc site.hs
-          ./site build
+        run: |
+          stack --system-ghc exec -- gh-pages clean
+          stack --system-ghc exec -- gh-pages build
       - name: Checkout gh-pages branch
         uses: actions/checkout@v2
         with:
