@@ -66,3 +66,10 @@ section {
 a {
 	color: #00b6ff;
 }
+
+pre {
+	padding: 20px;
+	background: #353535;
+	color: #fff;
+	font-size: small;
+}
