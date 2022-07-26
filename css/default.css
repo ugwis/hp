@@ -9,7 +9,9 @@ body {
 div#header {
     border-bottom: 2px solid black;
     padding: 12px 0px 12px 0px;
-	margin:5px;
+    /*margin:5px;*/
+    max-width: 1200px;
+    margin: auto;
 }
 
 div#logo a {
@@ -34,7 +36,10 @@ div#header #navigation a {
 }
 
 div#content {
-	margin:5px;
+    /*margin:5px;*/
+    max-width: 1200px;
+    margin: auto;
+
 }
 
 div#footer {
@@ -43,7 +48,10 @@ div#footer {
     font-size: 12px;
     padding: 12px 0px 12px 0px;
     text-align: right;
-	margin:5px;
+    /*margin:5px;*/
+    max-width: 1200px;
+    margin: auto;
+
 }
 
 h1 {
