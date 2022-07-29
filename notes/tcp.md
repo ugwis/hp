@@ -6,7 +6,7 @@ date: 2022-01-18
 
 TCP (Transmission Control Protocol) is defined in [RFC793](https://datatracker.ietf.org/doc/html/rfc793).
 
-# Histroy
+# History
 ## Origin
 ## RFC 33: New HOST-HOST Protocol
 It was finalized in RFC 33 in early 1970, and deployed to all nodes on the ARPANET in December 1970.

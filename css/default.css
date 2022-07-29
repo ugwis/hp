@@ -99,9 +99,6 @@ table {
 tbody {
     font-size: small;
 }
-tr {
-    padding: 4px 10px;
-}
 tr.header {
     background: #c9c9d9;
 }
@@ -112,6 +109,9 @@ tr.odd {
 
 tr.even {
     background: #f0f0f0;
+}
+td {
+    padding: 4px 10px;
 }
 
 
