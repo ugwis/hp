@@ -93,6 +93,18 @@ h3.nocount:before {
     counter-increment: none;
 }
 
+tr.header {
+    background: #c9c9d9;
+}
+
+tr.odd {
+    background: #ffffff;
+}
+
+tr.even {
+    background: #f0f0f0;
+}
+
 
 div.info {
     color: #555;
