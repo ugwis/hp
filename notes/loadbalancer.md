@@ -1,13 +1,13 @@
 ---
-title: Load Balancer
+title: Load Balancing
 date: 2021-01-18
 ---
 # About
 Basic functions
-- request balancing across multiple servers
-- request/response buffering (or not)
-- keep availability and reliability by sending request only to healthy servers
-- etc.
+1. request balancing across multiple servers
+2. request/response buffering (or not)
+3. keep availability and reliability by sending request only to healthy servers
+4. etc.
 
 # Classification
 There are five types of Load Balancing.

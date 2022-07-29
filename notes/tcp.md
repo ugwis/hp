@@ -1,12 +1,19 @@
 ---
-title: TCP Basic
+title: TCP Basics
 date: 2022-01-18
 ---
 # About
 
-TCP(Transmission Control Protocol) is defined in [RFC793](https://datatracker.ietf.org/doc/html/rfc793).
+TCP (Transmission Control Protocol) is defined in [RFC793](https://datatracker.ietf.org/doc/html/rfc793).
 
 # Histroy
+## Origin
+## RFC 33: New HOST-HOST Protocol
+It was finalized in RFC 33 in early 1970, and deployed to all nodes on the ARPANET in December 1970.
+
+## RFC 675: SPECIFICATION OF INTERNET TRANSMISSION CONTROL PROGRAM
+
+## RFC 793: TRANSMISSION CONTROL PROTOCOL
 
 # TCP specification
 
