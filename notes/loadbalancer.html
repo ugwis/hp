@@ -30,15 +30,15 @@
 <h1 id="about">About</h1>
 <p>Basic functions 1. request balancing across multiple servers 2. request/response buffering (or not) 3. keep availability and reliability by sending request only to healthy servers 4. etc.</p>
 <h1 id="classification">Classification</h1>
-<p>There are five types of Load Balancing.</p>
-<h2 id="l2-load-balancinglink-aggregationbonding">L2 Load Balancing(Link Aggregation/Bonding)</h2>
-<p>Link Aggregation is well known as load balancing in ethernet. This is also one load balancing. Originating from Cisco’s EtherChannel, it is defined as Link Aggregation by many vendors. Bandwidth can be increased by using several source interfaces when transmitting Ethernet frames. As a load balancing algorithm, hashes such as source / destination IP / Port are often used. Of course, since it is based on hashing, you may not notice that the bandwidth has increased with a single TCP flow or the like.</p>
-<h2 id="l3-load-balancingip-multipath">L3 Load Balancing(IP Multipath)</h2>
+<p>There are five types of Load Balancing. The exact classification depends on the vendor, but here it is roughly classified according to the protocol that the load balancer terminates.</p>
+<h2 id="l2-load-balancing-link-aggregationbonding">L2 Load Balancing (Link Aggregation/Bonding)</h2>
+<p>Link Aggregation is well known as load balancing in ethernet. This is also one of the load balancing. Originating from Cisco’s EtherChannel, it is defined as Link Aggregation by many vendors. Bandwidth can be increased by using several source interfaces when transmitting Ethernet frames. As a load balancing algorithm, hashes such as source / destination IP / Port are often used. Of course, since it is based on hashing, you may not notice that the bandwidth has increased with a single TCP flow or the like.</p>
+<h2 id="l3-load-balancing-ip-multipath">L3 Load Balancing (IP Multipath)</h2>
 <p>This is a method of load balancing by L3 routing (ECMP). Hash is often used as a load balancing algorithm as well.</p>
-<h2 id="l4-load-balancingtcpudp">L4 Load Balancing(TCP/UDP)</h2>
-<h2 id="l7-load-balancinghttphttps">L7 Load Balancing(HTTP/HTTPS)</h2>
+<h2 id="l4-load-balancing-tcpudp">L4 Load Balancing (TCP/UDP)</h2>
+<h2 id="l7-load-balancing-httphttps">L7 Load Balancing (HTTP/HTTPS)</h2>
 <h2 id="load-balancing-by-dns">Load Balancing by DNS</h2>
-<p>DNS may also perform load balancing. It is called DNS round robin. DNS round robin expects clients to connect to different IP addresses by rearranging the order of the DNS query response results. It is notorious that RFC3484 may not allow glibc’s getaddrinfo () to be round-robind, as some clients may not behave as expected.</p>
+<p>DNS may also perform load balancing. It is called DNS round robin. DNS round robin expects clients to connect to different IP addresses by rearranging the order of the DNS query response results. It is notorious that RFC3484 may not allow glibc’s <code>getaddrinfo()</code> to be round-robind, as some clients may not behave as expected.</p>
 <h1 id="load-balancing-algorithms">Load Balancing Algorithms</h1>
 <h2 id="round-robin">Round Robin</h2>
 <h2 id="hash">Hash</h2>
