@@ -3,7 +3,8 @@ body {
     font-size: 16px;
     margin: 0px auto 0px auto;
     width: 100%;
-	font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    counter-reset: h1counter;
 }
 
 div#header {
@@ -53,14 +54,45 @@ div#footer {
     margin: auto;
 
 }
-
 h1 {
     font-size: 24px;
+    counter-reset: h2counter;
+}
+h1:before {
+    content: counter(h1counter) ".\0000a0\0000a0";
+    counter-increment: h1counter;
+}
+h1.nocount:before {
+    content: none;
+    counter-increment: none;
 }
 
 h2 {
     font-size: 20px;
+    counter-reset: h3counter;
 }
+h2:before {
+    content: counter(h1counter) "." counter(h2counter) ".\0000a0\0000a0";
+    counter-increment: h2counter;
+    counter-reset: h3counter;
+}
+h2.nocount:before {
+    content: none;
+    counter-increment: none;
+}
+
+h3 {
+    font-size: 16px;
+}
+h3:before {
+    content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) ".\0000a0\0000a0";
+    counter-increment: h3counter;
+}
+h3.nocount:before {
+    content: none;
+    counter-increment: none;
+}
+
 
 div.info {
     color: #555;
