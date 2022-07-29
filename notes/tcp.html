@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>TCP Basic | ugwis.net</title>
+        <link rel="stylesheet" type="text/css" href="../css/default.css" />
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+    </head>
+    <body>
+        <div id="header">
+            <div id="logo">
+                <a href="../">ugwis.net</a>
+            </div>
+            <div id="navigation">
+                <a href="../">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../archive.html">Archive</a>
+            </div>
+        </div>
+
+        <div id="content">
+            <h1>TCP Basic</h1>
+
+            <div class="info">
+    Noted on January 18, 2022
+    
+</div>
+
+<h1 id="about">About</h1>
+<p>TCP(Transmission Control Protocol) is defined in <a href="https://datatracker.ietf.org/doc/html/rfc793">RFC793</a>.</p>
+<h1 id="histroy">Histroy</h1>
+<h1 id="tcp-specification">TCP specification</h1>
+<h2 id="datagram">Datagram</h2>
+<pre><code>    0                   1                   2                   3
+    0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |          Source Port          |       Destination Port        |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |                        Sequence Number                        |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |                    Acknowledgment Number                      |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |  Data |           |U|A|P|R|S|F|                               |
+   | Offset| Reserved  |R|C|S|S|Y|I|            Window             |
+   |       |           |G|K|H|T|N|N|                               |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |           Checksum            |         Urgent Pointer        |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |                    Options                    |    Padding    |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |                             data                              |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</code></pre>
+<h2 id="flags">Flags</h2>
+<h3 id="ns---ecn-nonce">NS - ECN-nonce</h3>
+<h3 id="cwr---congestion-window-reduced">CWR - Congestion window reduced</h3>
+<h3 id="ece---ecn-echo">ECE - ECN-Echo</h3>
+<h3 id="urg---urgent">URG - Urgent</h3>
+<h3 id="ack---acknowledgement">ACK - Acknowledgement</h3>
+<h3 id="psh---push">PSH - Push</h3>
+<h3 id="rst---reset">RST - Reset</h3>
+<h3 id="syn---synchronization">SYN - Synchronization</h3>
+<h3 id="fin---finish">FIN - Finish</h3>
+<h2 id="options">Options</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Kind</th>
+<th>Length</th>
+<th>Meaning Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>-</td>
+<td>End of Option List [RFC-ietf-tcpm-rfc793bis-28]</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>-</td>
+<td>No-Operation [RFC-ietf-tcpm-rfc793bis-28]</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>4</td>
+<td>Maximum Segment Size [RFC-ietf-tcpm-rfc793bis-28]</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>3</td>
+<td>Window Scale [RFC7323]</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>2</td>
+<td>SACK Permitted [RFC2018]</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>N</td>
+<td>SACK [RFC2018]</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>6</td>
+<td>Echo (obsoleted by option 8) [RFC1072][RFC6247]</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>6</td>
+<td>Echo Reply (obsoleted by option 8) [RFC1072][RFC6247]</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>10</td>
+<td>Timestamps [RFC7323]</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>2</td>
+<td>Partial Order Connection Permitted (obsolete) [RFC1693][RFC6247]</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>3</td>
+<td>Partial Order Service Profile (obsolete) [RFC1693][RFC6247]</td>
+</tr>
+<tr class="even">
+<td>11</td>
+<td></td>
+<td>CC (obsolete) [RFC1644][RFC6247]</td>
+</tr>
+<tr class="odd">
+<td>12</td>
+<td></td>
+<td>CC.NEW (obsolete) [RFC1644][RFC6247]</td>
+</tr>
+<tr class="even">
+<td>13</td>
+<td></td>
+<td>CC.ECHO (obsolete) [RFC1644][RFC6247]</td>
+</tr>
+<tr class="odd">
+<td>14</td>
+<td>3</td>
+<td>TCP Alternate Checksum Request (obsolete) [RFC1146][RFC6247]</td>
+</tr>
+<tr class="even">
+<td>15</td>
+<td>N</td>
+<td>TCP Alternate Checksum Data (obsolete) [RFC1146][RFC6247]</td>
+</tr>
+<tr class="odd">
+<td>16</td>
+<td></td>
+<td>Skeeter [Stev_Knowles]</td>
+</tr>
+<tr class="even">
+<td>17</td>
+<td></td>
+<td>Bubba [Stev_Knowles]</td>
+</tr>
+<tr class="odd">
+<td>18</td>
+<td>3</td>
+<td>Trailer Checksum Option [Subbu_Subramaniam][Monroe_Bridges]</td>
+</tr>
+<tr class="even">
+<td>19</td>
+<td>18</td>
+<td>MD5 Signature Option (obsoleted by option 29) [RFC2385]</td>
+</tr>
+<tr class="odd">
+<td>20</td>
+<td></td>
+<td>SCPS Capabilities [Keith_Scott]</td>
+</tr>
+<tr class="even">
+<td>21</td>
+<td></td>
+<td>Selective Negative Acknowledgements [Keith_Scott]</td>
+</tr>
+<tr class="odd">
+<td>22</td>
+<td></td>
+<td>Record Boundaries [Keith_Scott]</td>
+</tr>
+<tr class="even">
+<td>23</td>
+<td></td>
+<td>Corruption experienced [Keith_Scott]</td>
+</tr>
+<tr class="odd">
+<td>24</td>
+<td></td>
+<td>SNAP [Vladimir_Sukonnik]</td>
+</tr>
+<tr class="even">
+<td>25</td>
+<td></td>
+<td>Unassigned (released 2000-12-18)</td>
+</tr>
+<tr class="odd">
+<td>26</td>
+<td></td>
+<td>TCP Compression Filter [Steve_Bellovin]</td>
+</tr>
+<tr class="even">
+<td>27</td>
+<td>8</td>
+<td>Quick-Start Response [RFC4782]</td>
+</tr>
+<tr class="odd">
+<td>28</td>
+<td>4</td>
+<td>User Timeout Option (also, other known unauthorized use) [***][1] [RFC5482]</td>
+</tr>
+<tr class="even">
+<td>29</td>
+<td></td>
+<td>TCP Authentication Option (TCP-AO) [RFC5925]</td>
+</tr>
+<tr class="odd">
+<td>30</td>
+<td>N</td>
+<td>Multipath TCP (MPTCP) [RFC8684]</td>
+</tr>
+<tr class="even">
+<td>31</td>
+<td></td>
+<td>Reserved (known unauthorized use without proper IANA assignment) [**]</td>
+</tr>
+<tr class="odd">
+<td>32</td>
+<td></td>
+<td>Reserved (known unauthorized use without proper IANA assignment) [**]</td>
+</tr>
+<tr class="even">
+<td>33</td>
+<td></td>
+<td>Reserved (known unauthorized use without proper IANA assignment) [**]</td>
+</tr>
+<tr class="odd">
+<td>34</td>
+<td>variable</td>
+<td>TCP Fast Open Cookie [RFC7413]</td>
+</tr>
+<tr class="even">
+<td>35-68</td>
+<td></td>
+<td>Reserved</td>
+</tr>
+<tr class="odd">
+<td>69</td>
+<td>N</td>
+<td>Encryption Negotiation (TCP-ENO) [RFC8547]</td>
+</tr>
+<tr class="even">
+<td>70</td>
+<td></td>
+<td>Reserved (known unauthorized use without proper IANA assignment) [**]</td>
+</tr>
+<tr class="odd">
+<td>71-75</td>
+<td></td>
+<td>Reserved</td>
+</tr>
+<tr class="even">
+<td>76</td>
+<td></td>
+<td>Reserved (known unauthorized use without proper IANA assignment) [**]</td>
+</tr>
+<tr class="odd">
+<td>77</td>
+<td></td>
+<td>Reserved (known unauthorized use without proper IANA assignment) [**]</td>
+</tr>
+<tr class="even">
+<td>78</td>
+<td></td>
+<td>Reserved (known unauthorized use without proper IANA assignment) [**]</td>
+</tr>
+<tr class="odd">
+<td>79-252</td>
+<td></td>
+<td>Reserved</td>
+</tr>
+<tr class="even">
+<td>253</td>
+<td>N</td>
+<td>RFC3692-style Experiment 1 (also improperly used for shipping products) [*] [RFC4727]</td>
+</tr>
+<tr class="odd">
+<td>254</td>
+<td>N</td>
+<td>RFC3692-style Experiment 2 (also improperly used for shipping products) [*] [RFC4727]</td>
+</tr>
+</tbody>
+</table>
+<p>(Source of the table: https://www.iana.org/assignments/tcp-parameters/tcp-parameters.xhtml)</p>
+<h1 id="mss">MSS</h1>
+<p>The maximum segment size (MSS) is a parameter of the options field of the TCP header that specifies the largest amount of data.</p>
+<h2 id="mss-clamping">MSS Clamping</h2>
+<h1 id="features">Features</h1>
+<h2 id="wayhandshake">3-wayhandshake</h2>
+<h2 id="flow-control">Flow Control</h2>
+<p>Flow control is a function that notifies the sender of the amount that can be received and avoids a buffer overflow and a heavy load on the receiver.</p>
+<p>Window Scaling (RFC 1323) <code>window-size = window(0~65535) * 2^shift.cnf(0~14 or -1)</code><br />
+rwnd (receive window size)</p>
+<pre><code>sysctl net.ipv4.tcp_window_scaling</code></pre>
+<h2 id="congestion-control">Congestion Control</h2>
+<p>cwnd (congestion window size) ssthresh(slow start threshold)</p>
+<ul>
+<li>Loss Based (Tahoe/Reno/New Reno/Cubic)</li>
+<li>Delay Based (Vegas/BBR)</li>
+<li>Loss + Delay Based (compound TCP)</li>
+</ul>
+<h3 id="loss-based-congestion-control">Loss Based Congestion Control</h3>
+<h3 id="delay-based-congestion-control">Delay Based Congestion Control</h3>
+<h3 id="loss-delay-based-congestion-control">Loss + Delay Based Congestion Control</h3>
+<h1 id="well-known-issues">Well-known issues</h1>
+<h2 id="congestion-collapse">Congestion collapse</h2>
+<h1 id="tcp-tips">TCP Tips</h1>
+<h2 id="tcp_defer_accept">TCP_DEFER_ACCEPT</h2>
+<p>Linux Kernel 2.6.32 or &gt; ## TCP Fast Open</p>
+
+        </div>
+        <div id="footer">
+            Site proudly generated by
+            <a href="http://jaspervdj.be/hakyll">Hakyll</a>
+        </div>
+    </body>
+</html>
