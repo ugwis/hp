@@ -93,6 +93,15 @@ h3.nocount:before {
     counter-increment: none;
 }
 
+table {
+    width: 100%;
+}
+tbody {
+    font-size: small;
+}
+tr {
+    padding: 4px 10px;
+}
 tr.header {
     background: #c9c9d9;
 }
