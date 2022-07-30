@@ -4,16 +4,31 @@ date: 2022-01-18
 ---
 # About
 
-TCP (Transmission Control Protocol) is defined in [RFC793](https://datatracker.ietf.org/doc/html/rfc793).
+TCP (Transmission Control Protocol) is defined in [RFC793](https://datatracker.ietf.org/doc/html/rfc793).  
+TCP implements the following to ensure reliability over an unreliable underlying protocol:   
+- arrival acknowledgement
+- error checking
+- retransmission
+- order of arrival
+- flow control
+- QoS
 
 # History
-## Origin
 ## RFC 33: New HOST-HOST Protocol
 It was finalized in RFC 33 in early 1970, and deployed to all nodes on the ARPANET in December 1970.
 
+## First paper "A Protocol for Packet Network Intercommunication."
+Vinton Cerf and Robert Kahn submitted this at the IEEE Transactions on Communications conference in 1974.
+
 ## RFC 675: SPECIFICATION OF INTERNET TRANSMISSION CONTROL PROGRAM
+RFC 675 was published in December 1974, but it was not fully functional in 1974.
 
 ## RFC 793: TRANSMISSION CONTROL PROTOCOL
+RFC 675 was revised and two separate RFCs:
+- RFC 791 “Internet Protocol”
+- RFC 793 “Transmission Control Protocol”
+
+"IPv4" means 4th version of the original RFC ever published on the internet.
 
 # TCP specification
 
