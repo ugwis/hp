@@ -7,11 +7,11 @@ date: 2022-01-18
 TCP (Transmission Control Protocol) is defined in [RFC793](https://datatracker.ietf.org/doc/html/rfc793).  
 TCP implements the following to ensure reliability over an unreliable underlying protocol:   
 
-- arrival acknowledgement
-- error checking
-- retransmission
-- order of arrival
-- flow control
+- Arrival acknowledgement
+- Error checking
+- Retransmission
+- Order of arrival
+- Flow control
 - QoS
 
 # History
