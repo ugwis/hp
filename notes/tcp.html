@@ -28,13 +28,19 @@
 </div>
 
 <h1 id="about">About</h1>
-<p>TCP (Transmission Control Protocol) is defined in <a href="https://datatracker.ietf.org/doc/html/rfc793">RFC793</a>.</p>
+<p>TCP (Transmission Control Protocol) is defined in <a href="https://datatracker.ietf.org/doc/html/rfc793">RFC793</a>.<br />
+TCP implements the following to ensure reliability over an unreliable underlying protocol:<br />
+- arrival acknowledgement - error checking - retransmission - order of arrival - flow control - QoS</p>
 <h1 id="history">History</h1>
-<h2 id="origin">Origin</h2>
 <h2 id="rfc-33-new-host-host-protocol">RFC 33: New HOST-HOST Protocol</h2>
 <p>It was finalized in RFC 33 in early 1970, and deployed to all nodes on the ARPANET in December 1970.</p>
+<h2 id="first-paper-a-protocol-for-packet-network-intercommunication.">First paper “A Protocol for Packet Network Intercommunication.”</h2>
+<p>Vinton Cerf and Robert Kahn submitted this at the IEEE Transactions on Communications conference in 1974.</p>
 <h2 id="rfc-675-specification-of-internet-transmission-control-program">RFC 675: SPECIFICATION OF INTERNET TRANSMISSION CONTROL PROGRAM</h2>
+<p>RFC 675 was published in December 1974, but it was not fully functional in 1974.</p>
 <h2 id="rfc-793-transmission-control-protocol">RFC 793: TRANSMISSION CONTROL PROTOCOL</h2>
+<p>RFC 675 was revised and two separate RFCs: - RFC 791 “Internet Protocol” - RFC 793 “Transmission Control Protocol”</p>
+<p>“IPv4” means 4th version of the original RFC ever published on the internet.</p>
 <h1 id="tcp-specification">TCP specification</h1>
 <h2 id="datagram">Datagram</h2>
 <pre><code>    0                   1                   2                   3
