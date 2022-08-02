@@ -14,7 +14,7 @@ Basic functions
 # Classification
 There are several types of Load Balancing. The exact classification depends on the vendor, but here it is roughly classified according to the protocol that the load balancer terminates.
 
-> NOTE: Some of the load balancer (like haproxy) enables you to use TLS SNI in TCP mode without TLS termination to route to target servers.
+> **NOTE**: Some of the load balancer (like haproxy) enables you to use TLS SNI in TCP mode without TLS termination to route to target servers.
 
 ## L2 Load Balancing (Link Aggregation/Bonding)
 Link Aggregation is well known as load balancing in ethernet. This is also one of the load balancing. 
