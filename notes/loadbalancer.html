@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>Load Balancing | ugwis.net</title>
+        <title>Load Balancing basics | ugwis.net</title>
         <link rel="stylesheet" type="text/css" href="../css/default.css" />
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
     </head>
@@ -20,7 +20,7 @@
         </div>
 
         <div id="content">
-            <h1 class="nocount">Load Balancing</h1>
+            <h1 class="nocount">Load Balancing basics</h1>
 
             <div class="info">
     Noted on January 18, 2021
@@ -28,9 +28,19 @@
 </div>
 
 <h1 id="about">About</h1>
-<p>Basic functions 1. request balancing across multiple servers 2. request/response buffering (or not) 3. keep availability and reliability by sending request only to healthy servers 4. etc.</p>
+<p>Basic functions</p>
+<ul>
+<li>Distribute request across multiple servers</li>
+<li>Buffer request/response (or not)</li>
+<li>Keep high availability and high reliability by sending request only to healthy servers</li>
+<li>Reduce the number of connections your server receives</li>
+<li>etc.</li>
+</ul>
 <h1 id="classification">Classification</h1>
-<p>There are five types of Load Balancing. The exact classification depends on the vendor, but here it is roughly classified according to the protocol that the load balancer terminates.</p>
+<p>There are several types of Load Balancing. The exact classification depends on the vendor, but here it is roughly classified according to the protocol that the load balancer terminates.</p>
+<blockquote>
+<p>NOTE: Some of the load balancer (like haproxy) enables you to use TLS SNI in TCP mode without TLS termination to route to target servers.</p>
+</blockquote>
 <h2 id="l2-load-balancing-link-aggregationbonding">L2 Load Balancing (Link Aggregation/Bonding)</h2>
 <p>Link Aggregation is well known as load balancing in ethernet. This is also one of the load balancing. Originating from Cisco’s EtherChannel, it is defined as Link Aggregation by many vendors. Bandwidth can be increased by using several source interfaces when transmitting Ethernet frames. As a load balancing algorithm, hashes such as source / destination IP / Port are often used. Of course, since it is based on hashing, you may not notice that the bandwidth has increased with a single TCP flow or the like.</p>
 <h2 id="l3-load-balancing-ip-multipath">L3 Load Balancing (IP Multipath)</h2>
@@ -38,7 +48,11 @@
 <h2 id="l4-load-balancing-tcpudp">L4 Load Balancing (TCP/UDP)</h2>
 <h2 id="l7-load-balancing-httphttps">L7 Load Balancing (HTTP/HTTPS)</h2>
 <h2 id="load-balancing-by-dns">Load Balancing by DNS</h2>
-<p>DNS may also perform load balancing. It is called DNS round robin. DNS round robin expects clients to connect to different IP addresses by rearranging the order of the DNS query response results. It is notorious that RFC3484 may not allow glibc’s <code>getaddrinfo()</code> to be round-robind, as some clients may not behave as expected.</p>
+<p>DNS may also perform load balancing. It is called DNS round robin and Global Server Load Balancing (GSLB).</p>
+<h3 id="dns-round-robin">DNS round robin</h3>
+<p>DNS round robin expects clients to connect to different IP addresses by rearranging the order of the DNS query response results. It is notorious that RFC3484 may not allow glibc’s <code>getaddrinfo()</code> to be round-robind, as some clients may not behave as expected.</p>
+<h3 id="global-server-load-balancing-gslb">Global Server Load Balancing (GSLB)</h3>
+<p>GSLB is a method of hosting in multiple locations such as Tokyo and Osaka for disaster recovery and load balancing, and controlling it with DNS responses.</p>
 <h1 id="load-balancing-algorithms">Load Balancing Algorithms</h1>
 <h2 id="round-robin">Round Robin</h2>
 <h2 id="hash">Hash</h2>
