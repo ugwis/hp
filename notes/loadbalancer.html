@@ -39,7 +39,7 @@
 <h1 id="classification">Classification</h1>
 <p>There are several types of Load Balancing. The exact classification depends on the vendor, but here it is roughly classified according to the protocol that the load balancer terminates.</p>
 <blockquote>
-<p>NOTE: Some of the load balancer (like haproxy) enables you to use TLS SNI in TCP mode without TLS termination to route to target servers.</p>
+<p><strong>NOTE</strong>: Some of the load balancer (like haproxy) enables you to use TLS SNI in TCP mode without TLS termination to route to target servers.</p>
 </blockquote>
 <h2 id="l2-load-balancing-link-aggregationbonding">L2 Load Balancing (Link Aggregation/Bonding)</h2>
 <p>Link Aggregation is well known as load balancing in ethernet. This is also one of the load balancing. Originating from Cisco’s EtherChannel, it is defined as Link Aggregation by many vendors. Bandwidth can be increased by using several source interfaces when transmitting Ethernet frames. As a load balancing algorithm, hashes such as source / destination IP / Port are often used. Of course, since it is based on hashing, you may not notice that the bandwidth has increased with a single TCP flow or the like.</p>
