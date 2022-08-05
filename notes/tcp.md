@@ -137,7 +137,7 @@ The maximum segment size (MSS) is a parameter of the options field of the TCP he
 
 
 ## Flow Control
-Flow control is a function that notifies the sender of the amount that can be received and avoids a buffer overflow and a heavy load on the receiver.
+Flow control is a function that notifies each other of the amount that can be received and avoids a buffer overflow and a heavy load on the receiver.
 
 Window Scaling (RFC 1323)
 `window-size = window(0~65535) * 2^shift.cnf(0~14 or -1)`  
