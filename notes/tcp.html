@@ -328,7 +328,7 @@ TCP implements the following to ensure reliability over an unreliable underlying
 <h1 id="features">Features</h1>
 <h2 id="wayhandshake">3-wayhandshake</h2>
 <h2 id="flow-control">Flow Control</h2>
-<p>Flow control is a function that notifies the sender of the amount that can be received and avoids a buffer overflow and a heavy load on the receiver.</p>
+<p>Flow control is a function that notifies each other of the amount that can be received and avoids a buffer overflow and a heavy load on the receiver.</p>
 <p>Window Scaling (RFC 1323) <code>window-size = window(0~65535) * 2^shift.cnf(0~14 or -1)</code><br />
 rwnd (receive window size)</p>
 <pre><code>sysctl net.ipv4.tcp_window_scaling</code></pre>
