@@ -29,6 +29,23 @@ RFC 675 was revised and two separate RFCs:
 - RFC 791 “Internet Protocol”
 - RFC 793 “Transmission Control Protocol”
 
+## RFC 879: The TCP Maximum Segment Size
+## RFC 1011: OFFICIAL INTERNET PROTOCOLS
+## RFC 1122: Requirements for Internet Hosts -- Communication Layers
+## RFC 2581: TCP Congestion Control
+## RFC 2873: TCP Processing of the IPv4 Precedence Field
+## RFC 5681: TCP Congestion Control
+## RFC 5961: Improving TCP's Robustness to Blind In-Window Attacks
+## RFC 6013: TCP Cokkie Transactions (TCPCT)
+## RFC 6093: On the Implementation of the TCP Urgent Mechanism
+## RFC 6298: Computing TCP's Retransmission Timer
+## RFC 6429: TCP Sender Clarification for Persist Condition
+## RFC 6528: Defending against Sequence Number Attacks
+## RFC 6691: TCP Options and Maximum Segment Size (MSS)
+## RFC 7413: TCP Fast Open
+## RFC 793bis: Transmission Control Protocol (TCP) Specification
+
+
 "IPv4" means 4th version of the original RFC ever published on the internet.
 
 # TCP specification
@@ -58,20 +75,36 @@ RFC 675 was revised and two separate RFCs:
    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 ```
 
-## Flags
-### NS - ECN-nonce
-### CWR - Congestion window reduced
-### ECE - ECN-Echo
-### URG - Urgent
-### ACK - Acknowledgement
-### PSH - Push
-### RST - Reset
-### SYN - Synchronization
-### FIN - Finish
+### Source Port / Destination Port
+A port number is a 16-bit integer ranging from 0 to 65535.
+
+#### 0 - 1023: System Ports
+#### 1024 - 49151: User Ports
+#### 49152 - 65535: Dynamic and/or Private Ports
+
+> **NOTE**: Different OS are known to use different ephemeral port ranges.
+> Linux: 32768 - 6100 controlled by sysctl knob `net.ipv4.ip_local_port_range` and selected sequentially (not randomization) 
+> MacOS: 49152-65535 (IANA suggestion)
+> Windows (until XP): 1025-5000
+> Windows (later Vista, 7, Server 2008): 49152-65535 (IANA suggestion)
+
+### Sequence Number / Acknowledgement Number
+
+### Flags
+#### NS - ECN-nonce
+#### CWR - Congestion window reduced
+#### ECE - ECN-Echo
+#### URG - Urgent
+#### ACK - Acknowledgement
+#### PSH - Push
+#### RST - Reset
+#### SYN - Synchronization
+#### FIN - Finish
+
+### Window Size
 
 
-
-## Options
+### Options
 
 |  Kind  |  Length  | Meaning Reference                                                                           |
 | ------ |  ------  | ------------------------------------------------------------------------------------------- |
@@ -125,11 +158,19 @@ RFC 675 was revised and two separate RFCs:
 
 
 
-# MSS
+#### MSS
 
 The maximum segment size (MSS) is a parameter of the options field of the TCP header that specifies the largest amount of data.
 
-## MSS Clamping
+> **NOTE**: MSS Clamping
+
+#### Timestamp
+#### SACK Permitted
+#### SACK
+#### Window Scaling
+
+## TCP State Machine
+![TCP State Machine](https://quickchart.io/graphviz?layout=neato&graph=digraph%20tcp_state%20{splines=false;CLOSED1[label=%22CLOSED%22,pos%20=%20%220,0!%22];LISTEN[pos=%220,-2!%22];SYN_RCVD[pos=%22-3,-3!%22];SYN_SENT[pos=%223,-3!%22];ESTABLISHED[pos=%220,-4!%22];FIN_WAIT_1[pos=%22-3,-5!%22];FIN_WAIT_2[pos=%22-3,-7!%22];CLOSING[pos=%220,-5!%22];TIME_WAIT[pos=%220,-7!%22];CLOSE_WAIT[pos=%223,-5!%22];LAST_ACK[pos=%223,-7!%22];CLOSED2[label=%22CLOSED%22,pos=%220,-9!%22];CLOSED1%20-%3E%20LISTEN%20[label=%22appl:passive%20open\nsend:%3Cnothing%3E%22];CLOSED1%20-%3E%20SYN_SENT%20[label=%22%20%20appl:active%20open%20%20\n%20%20send:SYN%20%20%22];LISTEN%20-%3E%20SYN_RCVD%20[label=%22recv:SYN\nsend:SYN,ACK%22];LISTEN%20-%3E%20SYN_SENT%20[label=%22appl:send%20data\nsend:SYN%22];SYN_RCVD%20-%3E%20LISTEN%20[label=%22recv:RST%22];SYN_RCVD%20-%3E%20CLOSED1%20[label=%22timeout%20send:RST%22];SYN_RCVD%20-%3E%20FIN_WAIT_1%20[label=%22appl:close\nsend:FIN%22];SYN_RCVD%20-%3E%20ESTABLISHED%20[label=%22recv:ACK\nsend:%3Cnothing%3E%22];SYN_SENT%20-%3E%20SYN_RCVD%20[label=%22recv:SYN%20send:SYN,ACK%20simultaneous%20open%22];SYN_SENT%20-%3E%20CLOSED1%20[label=%22%20%20appl:close%20%20\n%20%20or%20timeout%20%20%22];SYN_SENT%20-%3E%20ESTABLISHED%20[label=%22recv:SYN,ACK\nsend:ACK%22];ESTABLISHED%20-%3E%20CLOSE_WAIT%20[label=%22recv:FIN\nsend:ACK%22];ESTABLISHED%20-%3E%20FIN_WAIT_1%20[label=%22appl:close\nsend:FIN%22];CLOSE_WAIT%20-%3E%20LAST_ACK%20[label=%22appl:close\nsend:FIN%22];LAST_ACK%20-%3E%20CLOSED2%20[label=%22recv:ACK\nsend:%3Cnothing%3E%22];FIN_WAIT_1%20-%3E%20CLOSING%20[label=%22recv:FIN\nsend:ACK%22];FIN_WAIT_1%20-%3E%20TIME_WAIT%20[label=%22recv:FIN,ACK\nsend:ACK%22];FIN_WAIT_1%20-%3E%20FIN_WAIT_2%20[label=%22recv:ACK\nsend:%3Cnothing%3E%22];CLOSING%20-%3E%20TIME_WAIT%20[label=%22recv:ACK\nsend:%3Cnothing%3E%22];FIN_WAIT_2%20-%3E%20TIME_WAIT%20[label=%22recv:FIN\nsend:ACK%22];TIME_WAIT%20-%3E%20CLOSED2%20;})
 
 # Features
 
