@@ -47,6 +47,21 @@ TCP implements the following to ensure reliability over an unreliable underlying
 <p>RFC 675 was published in December 1974, but it was not fully functional in 1974.</p>
 <h2 id="rfc-793-transmission-control-protocol">RFC 793: TRANSMISSION CONTROL PROTOCOL</h2>
 <p>RFC 675 was revised and two separate RFCs: - RFC 791 “Internet Protocol” - RFC 793 “Transmission Control Protocol”</p>
+<h2 id="rfc-879-the-tcp-maximum-segment-size">RFC 879: The TCP Maximum Segment Size</h2>
+<h2 id="rfc-1011-official-internet-protocols">RFC 1011: OFFICIAL INTERNET PROTOCOLS</h2>
+<h2 id="rfc-1122-requirements-for-internet-hosts-communication-layers">RFC 1122: Requirements for Internet Hosts – Communication Layers</h2>
+<h2 id="rfc-2581-tcp-congestion-control">RFC 2581: TCP Congestion Control</h2>
+<h2 id="rfc-2873-tcp-processing-of-the-ipv4-precedence-field">RFC 2873: TCP Processing of the IPv4 Precedence Field</h2>
+<h2 id="rfc-5681-tcp-congestion-control">RFC 5681: TCP Congestion Control</h2>
+<h2 id="rfc-5961-improving-tcps-robustness-to-blind-in-window-attacks">RFC 5961: Improving TCP’s Robustness to Blind In-Window Attacks</h2>
+<h2 id="rfc-6013-tcp-cokkie-transactions-tcpct">RFC 6013: TCP Cokkie Transactions (TCPCT)</h2>
+<h2 id="rfc-6093-on-the-implementation-of-the-tcp-urgent-mechanism">RFC 6093: On the Implementation of the TCP Urgent Mechanism</h2>
+<h2 id="rfc-6298-computing-tcps-retransmission-timer">RFC 6298: Computing TCP’s Retransmission Timer</h2>
+<h2 id="rfc-6429-tcp-sender-clarification-for-persist-condition">RFC 6429: TCP Sender Clarification for Persist Condition</h2>
+<h2 id="rfc-6528-defending-against-sequence-number-attacks">RFC 6528: Defending against Sequence Number Attacks</h2>
+<h2 id="rfc-6691-tcp-options-and-maximum-segment-size-mss">RFC 6691: TCP Options and Maximum Segment Size (MSS)</h2>
+<h2 id="rfc-7413-tcp-fast-open">RFC 7413: TCP Fast Open</h2>
+<h2 id="rfc-793bis-transmission-control-protocol-tcp-specification">RFC 793bis: Transmission Control Protocol (TCP) Specification</h2>
 <p>“IPv4” means 4th version of the original RFC ever published on the internet.</p>
 <h1 id="tcp-specification">TCP specification</h1>
 <h2 id="datagram">Datagram</h2>
@@ -69,17 +84,27 @@ TCP implements the following to ensure reliability over an unreliable underlying
    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
    |                             data                              |
    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</code></pre>
-<h2 id="flags">Flags</h2>
-<h3 id="ns---ecn-nonce">NS - ECN-nonce</h3>
-<h3 id="cwr---congestion-window-reduced">CWR - Congestion window reduced</h3>
-<h3 id="ece---ecn-echo">ECE - ECN-Echo</h3>
-<h3 id="urg---urgent">URG - Urgent</h3>
-<h3 id="ack---acknowledgement">ACK - Acknowledgement</h3>
-<h3 id="psh---push">PSH - Push</h3>
-<h3 id="rst---reset">RST - Reset</h3>
-<h3 id="syn---synchronization">SYN - Synchronization</h3>
-<h3 id="fin---finish">FIN - Finish</h3>
-<h2 id="options">Options</h2>
+<h3 id="source-port-destination-port">Source Port / Destination Port</h3>
+<p>A port number is a 16-bit integer ranging from 0 to 65535.</p>
+<h4 id="system-ports">0 - 1023: System Ports</h4>
+<h4 id="user-ports">1024 - 49151: User Ports</h4>
+<h4 id="dynamic-andor-private-ports">49152 - 65535: Dynamic and/or Private Ports</h4>
+<blockquote>
+<p><strong>NOTE</strong>: Different OS are known to use different ephemeral port ranges. Linux: 32768 - 6100 controlled by sysctl knob <code>net.ipv4.ip_local_port_range</code> and selected sequentially (not randomization) MacOS: 49152-65535 (IANA suggestion) Windows (until XP): 1025-5000 Windows (later Vista, 7, Server 2008): 49152-65535 (IANA suggestion)</p>
+</blockquote>
+<h3 id="sequence-number-acknowledgement-number">Sequence Number / Acknowledgement Number</h3>
+<h3 id="flags">Flags</h3>
+<h4 id="ns---ecn-nonce">NS - ECN-nonce</h4>
+<h4 id="cwr---congestion-window-reduced">CWR - Congestion window reduced</h4>
+<h4 id="ece---ecn-echo">ECE - ECN-Echo</h4>
+<h4 id="urg---urgent">URG - Urgent</h4>
+<h4 id="ack---acknowledgement">ACK - Acknowledgement</h4>
+<h4 id="psh---push">PSH - Push</h4>
+<h4 id="rst---reset">RST - Reset</h4>
+<h4 id="syn---synchronization">SYN - Synchronization</h4>
+<h4 id="fin---finish">FIN - Finish</h4>
+<h3 id="window-size">Window Size</h3>
+<h3 id="options">Options</h3>
 <table>
 <colgroup>
 <col style="width: 5%" />
@@ -322,9 +347,19 @@ TCP implements the following to ensure reliability over an unreliable underlying
 </tbody>
 </table>
 <p>(Source of the table: https://www.iana.org/assignments/tcp-parameters/tcp-parameters.xhtml)</p>
-<h1 id="mss">MSS</h1>
+<h4 id="mss">MSS</h4>
 <p>The maximum segment size (MSS) is a parameter of the options field of the TCP header that specifies the largest amount of data.</p>
-<h2 id="mss-clamping">MSS Clamping</h2>
+<blockquote>
+<p><strong>NOTE</strong>: MSS Clamping</p>
+</blockquote>
+<h4 id="timestamp">Timestamp</h4>
+<h4 id="sack-permitted">SACK Permitted</h4>
+<h4 id="sack">SACK</h4>
+<h4 id="window-scaling">Window Scaling</h4>
+<h2 id="tcp-state-machine">TCP State Machine</h2>
+<figure>
+<img src="https://quickchart.io/graphviz?layout=neato&amp;graph=digraph%20tcp_state%20%7Bsplines=false;CLOSED1%5Blabel=%22CLOSED%22,pos%20=%20%220,0!%22%5D;LISTEN%5Bpos=%220,-2!%22%5D;SYN_RCVD%5Bpos=%22-3,-3!%22%5D;SYN_SENT%5Bpos=%223,-3!%22%5D;ESTABLISHED%5Bpos=%220,-4!%22%5D;FIN_WAIT_1%5Bpos=%22-3,-5!%22%5D;FIN_WAIT_2%5Bpos=%22-3,-7!%22%5D;CLOSING%5Bpos=%220,-5!%22%5D;TIME_WAIT%5Bpos=%220,-7!%22%5D;CLOSE_WAIT%5Bpos=%223,-5!%22%5D;LAST_ACK%5Bpos=%223,-7!%22%5D;CLOSED2%5Blabel=%22CLOSED%22,pos=%220,-9!%22%5D;CLOSED1%20-%3E%20LISTEN%20%5Blabel=%22appl:passive%20open\nsend:%3Cnothing%3E%22%5D;CLOSED1%20-%3E%20SYN_SENT%20%5Blabel=%22%20%20appl:active%20open%20%20\n%20%20send:SYN%20%20%22%5D;LISTEN%20-%3E%20SYN_RCVD%20%5Blabel=%22recv:SYN\nsend:SYN,ACK%22%5D;LISTEN%20-%3E%20SYN_SENT%20%5Blabel=%22appl:send%20data\nsend:SYN%22%5D;SYN_RCVD%20-%3E%20LISTEN%20%5Blabel=%22recv:RST%22%5D;SYN_RCVD%20-%3E%20CLOSED1%20%5Blabel=%22timeout%20send:RST%22%5D;SYN_RCVD%20-%3E%20FIN_WAIT_1%20%5Blabel=%22appl:close\nsend:FIN%22%5D;SYN_RCVD%20-%3E%20ESTABLISHED%20%5Blabel=%22recv:ACK\nsend:%3Cnothing%3E%22%5D;SYN_SENT%20-%3E%20SYN_RCVD%20%5Blabel=%22recv:SYN%20send:SYN,ACK%20simultaneous%20open%22%5D;SYN_SENT%20-%3E%20CLOSED1%20%5Blabel=%22%20%20appl:close%20%20\n%20%20or%20timeout%20%20%22%5D;SYN_SENT%20-%3E%20ESTABLISHED%20%5Blabel=%22recv:SYN,ACK\nsend:ACK%22%5D;ESTABLISHED%20-%3E%20CLOSE_WAIT%20%5Blabel=%22recv:FIN\nsend:ACK%22%5D;ESTABLISHED%20-%3E%20FIN_WAIT_1%20%5Blabel=%22appl:close\nsend:FIN%22%5D;CLOSE_WAIT%20-%3E%20LAST_ACK%20%5Blabel=%22appl:close\nsend:FIN%22%5D;LAST_ACK%20-%3E%20CLOSED2%20%5Blabel=%22recv:ACK\nsend:%3Cnothing%3E%22%5D;FIN_WAIT_1%20-%3E%20CLOSING%20%5Blabel=%22recv:FIN\nsend:ACK%22%5D;FIN_WAIT_1%20-%3E%20TIME_WAIT%20%5Blabel=%22recv:FIN,ACK\nsend:ACK%22%5D;FIN_WAIT_1%20-%3E%20FIN_WAIT_2%20%5Blabel=%22recv:ACK\nsend:%3Cnothing%3E%22%5D;CLOSING%20-%3E%20TIME_WAIT%20%5Blabel=%22recv:ACK\nsend:%3Cnothing%3E%22%5D;FIN_WAIT_2%20-%3E%20TIME_WAIT%20%5Blabel=%22recv:FIN\nsend:ACK%22%5D;TIME_WAIT%20-%3E%20CLOSED2%20;%7D" alt="TCP State Machine" /><figcaption aria-hidden="true">TCP State Machine</figcaption>
+</figure>
 <h1 id="features">Features</h1>
 <h2 id="wayhandshake">3-wayhandshake</h2>
 <h2 id="flow-control">Flow Control</h2>
