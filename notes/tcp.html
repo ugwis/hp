@@ -90,7 +90,11 @@ TCP implements the following to ensure reliability over an unreliable underlying
 <h4 id="user-ports">1024 - 49151: User Ports</h4>
 <h4 id="dynamic-andor-private-ports">49152 - 65535: Dynamic and/or Private Ports</h4>
 <blockquote>
-<p><strong>NOTE</strong>: Different OS are known to use different ephemeral port ranges. Linux: 32768 - 6100 controlled by sysctl knob <code>net.ipv4.ip_local_port_range</code> and selected sequentially (not randomization) MacOS: 49152-65535 (IANA suggestion) Windows (until XP): 1025-5000 Windows (later Vista, 7, Server 2008): 49152-65535 (IANA suggestion)</p>
+<p><strong>NOTE</strong>: Different OS are known to use different ephemeral port ranges.<br />
+Linux: 32768 - 6100 controlled by sysctl knob <code>net.ipv4.ip_local_port_range</code> and selected sequentially (not randomization)<br />
+MacOS: 49152-65535 (IANA suggestion)<br />
+Windows (until XP): 1025-5000<br />
+Windows (later Vista, 7, Server 2008): 49152-65535 (IANA suggestion)</p>
 </blockquote>
 <h3 id="sequence-number-acknowledgement-number">Sequence Number / Acknowledgement Number</h3>
 <h3 id="flags">Flags</h3>
