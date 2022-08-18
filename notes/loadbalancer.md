@@ -23,9 +23,10 @@ Originating from Cisco's EtherChannel, it is defined as Link Aggregation by many
 Bandwidth can be increased by using several source interfaces when transmitting Ethernet frames.  
 As a load balancing algorithm, hashes such as source / destination IP / Port are often used.  
 
-Pros
+### Pros
 - Products from many network vendors are compatible, and it is relatively easy to increase bandwidth. 
-Cons
+
+### Cons
 - Since it's hash-based, it may not increase bandwidth for a single TCP connection.
 
 > **NOTE**: Link Aggregation requires the same configuration the same link at both ends of the connection so that in case of only one side detect failure, cause inconsistency.
@@ -37,10 +38,11 @@ This is a method of load balancing by L3 routing (ECMP).
 Hash is often used as a load balancing algorithm as well. 
 If you use NAT (Network Address Transmission) at the router, 
 
-Pros
+### Pros
 - Due to the relative simplicity of processing, it is possible to build distributed systems using software.
 - Currently, most communication uses IP and is less susceptible to specification changes in upper layers.
-Cons
+
+### Cons
 - Since it's hash-based, it may not increase bandwidth for a single TCP connection.
 
 
@@ -48,6 +50,7 @@ Cons
 
 ### Pros
 - TCP/UDP are terminated in Load Balancer and split into front-end connection and back-end connection so that it's able to reduce RTT.
+
 ### Cons
 - Basically, upper layer controls (such as HTTP host headers) can't be applied
 
