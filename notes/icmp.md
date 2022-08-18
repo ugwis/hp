@@ -7,9 +7,9 @@ date: 2022-07-18
 from https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml
 
 ## Type 0 — Echo Reply
-| Codes | Description | Reference | 
-| ----- | ----------- | --------- |
-| 0     | No Code     |           |
+| Codes | Description                                                           | Reference | 
+| ----- | --------------------------------------------------------------------- | --------- |
+| 0     | No Code                                                               |           |
 
 ## Type 3 — Destination Unreachable
 | Codes | Description                                                           | Reference |
@@ -40,70 +40,74 @@ from https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml
 | 3     | Redirect Datagram for the Type of Service and Host                    |           |
 
 ## Type 8 — Echo
-| Codes | Description | Reference | 
-| ----- | ----------- | --------- |
-| 0     | No Code     |           |
+| Codes | Description                                                           | Reference | 
+| ----- | --------------------------------------------------------------------- | --------- |
+| 0     | No Code                                                               |           |
+
 
 ## Type 9 — Router Advertisement
-| Codes | Description                   | Reference |
-| ----- | ----------------------------- | --------- |
-| 0     | Normal router advertisement   | [RFC3344] |
-| 16    | Does not route common traffic | [RFC3344] |
+| Codes | Description                                                           | Reference | 
+| ----- | --------------------------------------------------------------------- | --------- |
+| 0     | Normal router advertisement                                           | [RFC3344] |
+| 16    | Does not route common traffic                                         | [RFC3344] |
 
 ## Type 10 — Router Selection
-| Codes | Description | Reference | 
-| ----- | ----------- | --------- |
-| 0     | No Code     |           |
+| Codes | Description                                                           | Reference | 
+| ----- | --------------------------------------------------------------------- | --------- |
+| 0     | No Code                                                               |           |
+
 
 ## Type 11 — Time Exceeded
-| Codes | Description                       | Reference |
-| ----- | --------------------------------- | --------- |
-| 0     | Time to Live exceeded in Transit  |           |
-| 1     | Fragment Reassembly Time Exceeded |           |
+| Codes | Description                                                           | Reference | 
+| ----- | --------------------------------------------------------------------- | --------- |
+| 0     | Time to Live exceeded in Transit                                      |           |
+| 1     | Fragment Reassembly Time Exceeded                                     |           |
 
 ## Type 12 — Parameter Problem
-| Codes | Description                 | Reference |
-| ----- | --------------------------- | --------- |
-| 0     | Pointer indicates the error |           |
-| 1     | Missing a Required Option   | [RFC1108] |
-| 2     | Bad Length                  |           |
+| Codes | Description                                                           | Reference | 
+| ----- | --------------------------------------------------------------------- | --------- |
+| 0     | Pointer indicates the error                                           |           |
+| 1     | Missing a Required Option                                             | [RFC1108] |
+| 2     | Bad Length                                                            |           |
 
 ## Type 13 — Timestamp
-| Codes | Description | Reference | 
-| ----- | ----------- | --------- |
-| 0     | No Code     |           |
+| Codes | Description                                                           | Reference | 
+| ----- | --------------------------------------------------------------------- | --------- |
+| 0     | No Code                                                               |           |
+
 
 ## Type 14 — Timestamp Reply
-| Codes | Description | Reference | 
-| ----- | ----------- | --------- |
-| 0     | No Code     |           |
+| Codes | Description                                                           | Reference | 
+| ----- | --------------------------------------------------------------------- | --------- |
+| 0     | No Code                                                               |           |
+
 
 ## Type 19 — Reserved (for Security)
 ## Types 20-29 — Reserved (for Robustness Experiment)
 ## Type 40 — Photuris
-| Codes | Description           | Reference |
-| ----- | --------------------- | --------- |
-| 0 	| Bad SPI               |           |
-| 1 	| Authentication Failed |           |
-| 2 	| Decompression Failed  |           |
-| 3 	| Decryption Failed     |           |
-| 4 	| Need Authentication   |           |
-| 5     | Need Authorization    |           |
+| Codes | Description                                                           | Reference | 
+| ----- | --------------------------------------------------------------------- | --------- |
+| 0 	| Bad SPI                                                               |           |
+| 1 	| Authentication Failed                                                 |           |
+| 2 	| Decompression Failed                                                  |           |
+| 3 	| Decryption Failed                                                     |           |
+| 4 	| Need Authentication                                                   |           |
+| 5     | Need Authorization                                                    |           |
 
 ## Type 41 — ICMP messages utilized by experimental mobility protocols such as Seamoby
 ## Type 42 — Extended Echo Request
-| Codes | Description |	Reference |
-| ----- | ----------- | --------- |
-| 0     | No Error    | [RFC8335] |
+| Codes | Description                                                           | Reference | 
+| ----- | --------------------------------------------------------------------- | --------- |
+| 0     | No Error                                                              | [RFC8335] |
 
 ## Type 43 — Extended Echo Reply
-| Codes | Description                       | Reference |
-| ----- | --------------------------------- | --------- |
-| 0     | No Error                          | [RFC8335] |
-| 1     | Malformed Query 	[RFC8335]   |           |
-| 2     | No Such Interface 	[RFC8335]   |           |
-| 3     | No Such Table Entry 	[RFC8335]   |           |
-| 4     | Multiple Interfaces Satisfy Query | [RFC8335] |
+| Codes | Description                                                           | Reference | 
+| ----- | --------------------------------------------------------------------- | --------- |
+| 0     | No Error                                                              | [RFC8335] |
+| 1     | Malformed Query                                                       | [RFC8335] |
+| 2     | No Such Interface                                                     | [RFC8335] |
+| 3     | No Such Table Entry                                                   | [RFC8335] |
+| 4     | Multiple Interfaces Satisfy Query                                     | [RFC8335] |
 
 ## Type 253 — RFC3692-style Experiment 1
 ## Type 254 — RFC3692-style Experiment 2
