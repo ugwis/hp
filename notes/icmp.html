@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>ICMP | ugwis.net</title>
+        <link rel="stylesheet" type="text/css" href="../css/default.css" />
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+    </head>
+    <body>
+        <div id="header">
+            <div id="logo">
+                <a href="../">ugwis.net</a>
+            </div>
+            <div id="navigation">
+                <a href="../">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../archive.html">Archive</a>
+            </div>
+        </div>
+
+        <div id="content">
+            <h1 class="nocount">ICMP</h1>
+
+            <div class="info">
+    Noted on July 18, 2022
+    
+</div>
+
+<h1 id="icmp-parameters">ICMP Parameters</h1>
+<p>from https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml</p>
+<h2 id="type-0-echo-reply">Type 0 — Echo Reply</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Codes</th>
+<th>Description</th>
+<th>Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>No Code</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="type-3-destination-unreachable">Type 3 — Destination Unreachable</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Codes</th>
+<th>Description</th>
+<th>Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>Net Unreachable</td>
+<td>[RFC792]</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>Host Unreachable</td>
+<td>[RFC792]</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>Protocol Unreachable</td>
+<td>[RFC792]</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>Port Unreachable</td>
+<td>[RFC792]</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>Fragmentation Needed and Don’t Fragment was Set</td>
+<td>[RFC792]</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>Source Route Failed</td>
+<td>[RFC792]</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>Destination Network Unknown</td>
+<td>[RFC1122]</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>Destination Host Unknown</td>
+<td>[RFC1122]</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>Source Host Isolated</td>
+<td>[RFC1122]</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>Communication with Destination Network is Administratively Prohibited</td>
+<td>[RFC1122]</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>Communication with Destination Host is Administratively Prohibited</td>
+<td>[RFC1122]</td>
+</tr>
+<tr class="even">
+<td>11</td>
+<td>Destination Network Unreachable for Type of Service</td>
+<td>[RFC1122]</td>
+</tr>
+<tr class="odd">
+<td>12</td>
+<td>Destination Host Unreachable for Type of Service</td>
+<td>[RFC1122]</td>
+</tr>
+<tr class="even">
+<td>13</td>
+<td>Communication Administratively Prohibited</td>
+<td>[RFC1812]</td>
+</tr>
+<tr class="odd">
+<td>14</td>
+<td>Host Precedence Violation</td>
+<td>[RFC1812]</td>
+</tr>
+<tr class="even">
+<td>15</td>
+<td>Precedence cutoff in effect</td>
+<td>[RFC1812]</td>
+</tr>
+</tbody>
+</table>
+<h2 id="type-5-redirect">Type 5 — Redirect</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Codes</th>
+<th>Description</th>
+<th>Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>Redirect Datagram for the Network (or subnet)</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>Redirect Datagram for the Host</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>Redirect Datagram for the Type of Service and Network</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>Redirect Datagram for the Type of Service and Host</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="type-8-echo">Type 8 — Echo</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Codes</th>
+<th>Description</th>
+<th>Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>No Code</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="type-9-router-advertisement">Type 9 — Router Advertisement</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Codes</th>
+<th>Description</th>
+<th>Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>Normal router advertisement</td>
+<td>[RFC3344]</td>
+</tr>
+<tr class="even">
+<td>16</td>
+<td>Does not route common traffic</td>
+<td>[RFC3344]</td>
+</tr>
+</tbody>
+</table>
+<h2 id="type-10-router-selection">Type 10 — Router Selection</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Codes</th>
+<th>Description</th>
+<th>Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>No Code</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="type-11-time-exceeded">Type 11 — Time Exceeded</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Codes</th>
+<th>Description</th>
+<th>Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>Time to Live exceeded in Transit</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>Fragment Reassembly Time Exceeded</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="type-12-parameter-problem">Type 12 — Parameter Problem</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Codes</th>
+<th>Description</th>
+<th>Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>Pointer indicates the error</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>Missing a Required Option</td>
+<td>[RFC1108]</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>Bad Length</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="type-13-timestamp">Type 13 — Timestamp</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Codes</th>
+<th>Description</th>
+<th>Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>No Code</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="type-14-timestamp-reply">Type 14 — Timestamp Reply</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Codes</th>
+<th>Description</th>
+<th>Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>No Code</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="type-19-reserved-for-security">Type 19 — Reserved (for Security)</h2>
+<h2 id="types-20-29-reserved-for-robustness-experiment">Types 20-29 — Reserved (for Robustness Experiment)</h2>
+<h2 id="type-40-photuris">Type 40 — Photuris</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Codes</th>
+<th>Description</th>
+<th>Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>Bad SPI</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>Authentication Failed</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>Decompression Failed</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>Decryption Failed</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>Need Authentication</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>Need Authorization</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="type-41-icmp-messages-utilized-by-experimental-mobility-protocols-such-as-seamoby">Type 41 — ICMP messages utilized by experimental mobility protocols such as Seamoby</h2>
+<h2 id="type-42-extended-echo-request">Type 42 — Extended Echo Request</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Codes</th>
+<th>Description</th>
+<th>Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>No Error</td>
+<td>[RFC8335]</td>
+</tr>
+</tbody>
+</table>
+<h2 id="type-43-extended-echo-reply">Type 43 — Extended Echo Reply</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Codes</th>
+<th>Description</th>
+<th>Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>No Error</td>
+<td>[RFC8335]</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>Malformed Query [RFC8335]</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>No Such Interface [RFC8335]</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>No Such Table Entry [RFC8335]</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>Multiple Interfaces Satisfy Query</td>
+<td>[RFC8335]</td>
+</tr>
+</tbody>
+</table>
+<h2 id="type-253-rfc3692-style-experiment-1">Type 253 — RFC3692-style Experiment 1</h2>
+<h2 id="type-254-rfc3692-style-experiment-2">Type 254 — RFC3692-style Experiment 2</h2>
+
+        </div>
+        <div id="footer">
+            Site proudly generated by
+            <a href="http://jaspervdj.be/hakyll">Hakyll</a>
+        </div>
+    </body>
+</html>
