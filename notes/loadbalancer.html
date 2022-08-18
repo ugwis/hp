@@ -42,28 +42,40 @@
 <p><strong>NOTE</strong>: Some of the load balancer (like haproxy) enables you to use TLS SNI in TCP mode without TLS termination to route to target servers.</p>
 </blockquote>
 <h2 id="l2-load-balancing-link-aggregationbonding">L2 Load Balancing (Link Aggregation/Bonding)</h2>
-<p>Link Aggregation (LAG) is well known as load balancing in ethernet. This is also one of the load balancing.<br />
-Originating from Cisco’s EtherChannel, it is defined as Link Aggregation by many vendors.<br />
-Bandwidth can be increased by using several source interfaces when transmitting Ethernet frames.<br />
-As a load balancing algorithm, hashes such as source / destination IP / Port are often used.</p>
-<p>Pros<br />
-- Products from many network vendors are compatible, and it is relatively easy to increase bandwidth.</p>
-<p>Cons<br />
-- Since it’s hash-based, it may not increase bandwidth for a single TCP connection.</p>
+<p>Link Aggregation (LAG) is well known as load balancing in ethernet. This is also one of the load balancing.Originating from Cisco’s EtherChannel, it is defined as Link Aggregation by many vendors.<br />
+Bandwidth can be increased by using several source interfaces when transmitting Ethernet frames.As a load balancing algorithm, hashes such as source / destination IP / Port are often used.</p>
+<p>Pros</p>
+<ul>
+<li>Products from many network vendors are compatible, and it is relatively easy to increase bandwidth.</li>
+</ul>
+<p>Cons</p>
+<ul>
+<li>Since it’s hash-based, it may not increase bandwidth for a single TCP connection.</li>
+</ul>
 <blockquote>
 <p><strong>NOTE</strong>: Link Aggregation requires the same configuration the same link at both ends of the connection so that in case of only one side detect failure, cause inconsistency. LACP negotiates configuration and detection of failure automatically.</p>
 </blockquote>
 <h2 id="l3-load-balancing-ip-multipath">L3 Load Balancing (IP Multipath)</h2>
 <p>This is a method of load balancing by L3 routing (ECMP). Hash is often used as a load balancing algorithm as well. If you use NAT (Network Address Transmission) at the router,</p>
-<p>Pros<br />
-- Due to the relative simplicity of processing, it is possible to build distributed systems using software. - Currently, most communication uses IP and is less susceptible to specification changes in upper layers.</p>
-<p>Cons<br />
-- Since it’s hash-based, it may not increase bandwidth for a single TCP connection.</p>
+<p>Pros</p>
+<ul>
+<li>Due to the relative simplicity of processing, it is possible to build distributed systems using software.</li>
+<li>Currently, most communication uses IP and is less susceptible to specification changes in upper layers.</li>
+</ul>
+<p>Cons</p>
+<ul>
+<li>Since it’s hash-based, it may not increase bandwidth for a single TCP connection.</li>
+</ul>
 <h2 id="l4-load-balancing-tcpudp">L4 Load Balancing (TCP/UDP)</h2>
-<p>Pros<br />
-- TCP/UDP are terminated in Load Balancer and split into front-end connection and back-end connection so that it’s able to reduce RTT.</p>
-<p>Cons<br />
-- Basically, upper layer controls (such as HTTP host headers) can’t be applied - The cost of implementing TCP termination from scratch is high. Connection tracking is essential for building a distributed system.</p>
+<p>Pros</p>
+<ul>
+<li>TCP/UDP are terminated in Load Balancer and split into front-end connection and back-end connection so that it’s able to reduce RTT.</li>
+</ul>
+<p>Cons</p>
+<ul>
+<li>Basically, upper layer controls (such as HTTP host headers) can’t be applied</li>
+<li>The cost of implementing TCP termination from scratch is high. Connection tracking is essential for building a distributed system.</li>
+</ul>
 <blockquote>
 <p><strong>NOTE</strong>: Some L4 load balancer such as haproxy parse upper layer protocol like TLS SNI transparently and forward by it. More details: https://cbonte.github.io/haproxy-dconv/1.9/configuration.html#7.3.5-req.ssl_sni</p>
 </blockquote>
