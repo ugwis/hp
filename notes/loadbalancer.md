@@ -18,8 +18,8 @@ There are several types of Load Balancing. The exact classification depends on t
 
 
 ## L2 Load Balancing (Link Aggregation/Bonding)
-Link Aggregation (LAG) is well known as load balancing in ethernet. This is also one of the load balancing.Originating from Cisco's EtherChannel, it is defined as Link Aggregation by many vendors.  
-Bandwidth can be increased by using several source interfaces when transmitting Ethernet frames.As a load balancing algorithm, hashes such as source / destination IP / Port are often used.  
+Link Aggregation (LAG) is well known as load balancing in ethernet. This is also one of the load balancing. Originating from Cisco's EtherChannel, it is defined as Link Aggregation by many vendors.  
+Bandwidth can be increased by using several source interfaces when transmitting Ethernet frames. As a load balancing algorithm, hashes such as source / destination IP / Port are often used.  
   
 Pros
 
