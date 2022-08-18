@@ -82,11 +82,11 @@ A port number is a 16-bit integer ranging from 0 to 65535.
 #### 1024 - 49151: User Ports
 #### 49152 - 65535: Dynamic and/or Private Ports
 
-> **NOTE**: Different OS are known to use different ephemeral port ranges.
-> Linux: 32768 - 6100 controlled by sysctl knob `net.ipv4.ip_local_port_range` and selected sequentially (not randomization) 
-> MacOS: 49152-65535 (IANA suggestion)
-> Windows (until XP): 1025-5000
-> Windows (later Vista, 7, Server 2008): 49152-65535 (IANA suggestion)
+> **NOTE**: Different OS are known to use different ephemeral port ranges.  
+> Linux: 32768 - 6100 controlled by sysctl knob `net.ipv4.ip_local_port_range` and selected sequentially (not randomization)  
+> MacOS: 49152-65535 (IANA suggestion)  
+> Windows (until XP): 1025-5000  
+> Windows (later Vista, 7, Server 2008): 49152-65535 (IANA suggestion)  
 
 ### Sequence Number / Acknowledgement Number
 
