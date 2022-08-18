@@ -64,6 +64,7 @@ div#footer {
 h1 {
     font-size: 24px;
     counter-reset: h2counter;
+    margin-block-end: 0.2em;
 }
 h1:before {
     content: counter(h1counter) ".\0000a0\0000a0";
@@ -77,6 +78,7 @@ h1.nocount:before {
 h2 {
     font-size: 20px;
     counter-reset: h3counter;
+    margin-block-end: 0.2em;
 }
 h2:before {
     content: counter(h1counter) "." counter(h2counter) ".\0000a0\0000a0";
@@ -90,6 +92,7 @@ h2.nocount:before {
 
 h3 {
     font-size: 16px;
+    margin-block-end: 0.2em;
 }
 h3:before {
     content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) ".\0000a0\0000a0";
@@ -133,6 +136,11 @@ section {
 }
 a {
 	color: #00b6ff;
+}
+
+p {
+    margin-block-start: 0.2em;
+    padding-left: 0.1em;
 }
 
 pre {
