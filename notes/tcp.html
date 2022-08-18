@@ -108,245 +108,166 @@ Windows (later Vista, 7, Server 2008): 49152-65535 (IANA suggestion)</p>
 <h4 id="syn---synchronization">SYN - Synchronization</h4>
 <h4 id="fin---finish">FIN - Finish</h4>
 <h3 id="window-size">Window Size</h3>
-<h3 id="options">Options</h3>
+<h3 id="options-without-reserved-obsoleted">Options (without reserved, obsoleted)</h3>
 <table>
 <colgroup>
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 88%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 61%" />
+<col style="width: 28%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th>Kind</th>
 <th>Length</th>
-<th>Meaning Reference</th>
+<th>Description</th>
+<th>Reference</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>0</td>
 <td>-</td>
-<td>End of Option List [RFC-ietf-tcpm-rfc793bis-28]</td>
+<td>End of Option List</td>
+<td>[RFC793]</td>
 </tr>
 <tr class="even">
 <td>1</td>
 <td>-</td>
-<td>No-Operation [RFC-ietf-tcpm-rfc793bis-28]</td>
+<td>No-Operation</td>
+<td>[RFC793]</td>
 </tr>
 <tr class="odd">
 <td>2</td>
 <td>4</td>
-<td>Maximum Segment Size [RFC-ietf-tcpm-rfc793bis-28]</td>
+<td>Maximum Segment Size</td>
+<td>[RFC793]</td>
 </tr>
 <tr class="even">
 <td>3</td>
 <td>3</td>
-<td>Window Scale [RFC7323]</td>
+<td>Window Scale</td>
+<td>[RFC7323]</td>
 </tr>
 <tr class="odd">
 <td>4</td>
 <td>2</td>
-<td>SACK Permitted [RFC2018]</td>
+<td>SACK Permitted</td>
+<td>[RFC2018]</td>
 </tr>
 <tr class="even">
 <td>5</td>
 <td>N</td>
-<td>SACK [RFC2018]</td>
-</tr>
-<tr class="odd">
-<td>6</td>
-<td>6</td>
-<td>Echo (obsoleted by option 8) [RFC1072][RFC6247]</td>
-</tr>
-<tr class="even">
-<td>7</td>
-<td>6</td>
-<td>Echo Reply (obsoleted by option 8) [RFC1072][RFC6247]</td>
+<td>SACK</td>
+<td>[RFC2018]</td>
 </tr>
 <tr class="odd">
 <td>8</td>
 <td>10</td>
-<td>Timestamps [RFC7323]</td>
+<td>Timestamps</td>
+<td>[RFC7323]</td>
 </tr>
 <tr class="even">
-<td>9</td>
-<td>2</td>
-<td>Partial Order Connection Permitted (obsolete) [RFC1693][RFC6247]</td>
-</tr>
-<tr class="odd">
-<td>10</td>
-<td>3</td>
-<td>Partial Order Service Profile (obsolete) [RFC1693][RFC6247]</td>
-</tr>
-<tr class="even">
-<td>11</td>
-<td></td>
-<td>CC (obsolete) [RFC1644][RFC6247]</td>
-</tr>
-<tr class="odd">
-<td>12</td>
-<td></td>
-<td>CC.NEW (obsolete) [RFC1644][RFC6247]</td>
-</tr>
-<tr class="even">
-<td>13</td>
-<td></td>
-<td>CC.ECHO (obsolete) [RFC1644][RFC6247]</td>
-</tr>
-<tr class="odd">
-<td>14</td>
-<td>3</td>
-<td>TCP Alternate Checksum Request (obsolete) [RFC1146][RFC6247]</td>
-</tr>
-<tr class="even">
-<td>15</td>
-<td>N</td>
-<td>TCP Alternate Checksum Data (obsolete) [RFC1146][RFC6247]</td>
-</tr>
-<tr class="odd">
 <td>16</td>
 <td></td>
-<td>Skeeter [Stev_Knowles]</td>
-</tr>
-<tr class="even">
-<td>17</td>
-<td></td>
-<td>Bubba [Stev_Knowles]</td>
+<td>Skeeter</td>
+<td>[Stev_Knowles]</td>
 </tr>
 <tr class="odd">
-<td>18</td>
-<td>3</td>
-<td>Trailer Checksum Option [Subbu_Subramaniam][Monroe_Bridges]</td>
+<td>17</td>
+<td></td>
+<td>Bubba</td>
+<td>[Stev_Knowles]</td>
 </tr>
 <tr class="even">
-<td>19</td>
 <td>18</td>
-<td>MD5 Signature Option (obsoleted by option 29) [RFC2385]</td>
+<td>3</td>
+<td>Trailer Checksum Option</td>
+<td>[Subbu_Subramaniam][Monroe_Bridges]</td>
 </tr>
 <tr class="odd">
 <td>20</td>
 <td></td>
-<td>SCPS Capabilities [Keith_Scott]</td>
+<td>SCPS Capabilities</td>
+<td>[Keith_Scott]</td>
 </tr>
 <tr class="even">
 <td>21</td>
 <td></td>
-<td>Selective Negative Acknowledgements [Keith_Scott]</td>
+<td>Selective Negative Acknowledgements</td>
+<td>[Keith_Scott]</td>
 </tr>
 <tr class="odd">
 <td>22</td>
 <td></td>
-<td>Record Boundaries [Keith_Scott]</td>
+<td>Record Boundaries</td>
+<td>[Keith_Scott]</td>
 </tr>
 <tr class="even">
 <td>23</td>
 <td></td>
-<td>Corruption experienced [Keith_Scott]</td>
+<td>Corruption experienced</td>
+<td>[Keith_Scott]</td>
 </tr>
 <tr class="odd">
 <td>24</td>
 <td></td>
-<td>SNAP [Vladimir_Sukonnik]</td>
+<td>SNAP</td>
+<td>[Vladimir_Sukonnik]</td>
 </tr>
 <tr class="even">
-<td>25</td>
-<td></td>
-<td>Unassigned (released 2000-12-18)</td>
-</tr>
-<tr class="odd">
 <td>26</td>
 <td></td>
-<td>TCP Compression Filter [Steve_Bellovin]</td>
+<td>TCP Compression Filter</td>
+<td>[Steve_Bellovin]</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>27</td>
 <td>8</td>
-<td>Quick-Start Response [RFC4782]</td>
+<td>Quick-Start Response</td>
+<td>[RFC4782]</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>28</td>
 <td>4</td>
-<td>User Timeout Option (also, other known unauthorized use) [***][1] [RFC5482]</td>
+<td>User Timeout Option (also, other known unauthorized use) [***][1]</td>
+<td>[RFC5482]</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>29</td>
 <td></td>
-<td>TCP Authentication Option (TCP-AO) [RFC5925]</td>
+<td>TCP Authentication Option (TCP-AO)</td>
+<td>[RFC5925]</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>30</td>
 <td>N</td>
-<td>Multipath TCP (MPTCP) [RFC8684]</td>
-</tr>
-<tr class="even">
-<td>31</td>
-<td></td>
-<td>Reserved (known unauthorized use without proper IANA assignment) [**]</td>
-</tr>
-<tr class="odd">
-<td>32</td>
-<td></td>
-<td>Reserved (known unauthorized use without proper IANA assignment) [**]</td>
-</tr>
-<tr class="even">
-<td>33</td>
-<td></td>
-<td>Reserved (known unauthorized use without proper IANA assignment) [**]</td>
+<td>Multipath TCP (MPTCP)</td>
+<td>[RFC8684]</td>
 </tr>
 <tr class="odd">
 <td>34</td>
 <td>variable</td>
-<td>TCP Fast Open Cookie [RFC7413]</td>
+<td>TCP Fast Open Cookie</td>
+<td>[RFC7413]</td>
 </tr>
 <tr class="even">
-<td>35-68</td>
-<td></td>
-<td>Reserved</td>
-</tr>
-<tr class="odd">
 <td>69</td>
 <td>N</td>
-<td>Encryption Negotiation (TCP-ENO) [RFC8547]</td>
-</tr>
-<tr class="even">
-<td>70</td>
-<td></td>
-<td>Reserved (known unauthorized use without proper IANA assignment) [**]</td>
+<td>Encryption Negotiation (TCP-ENO)</td>
+<td>[RFC8547]</td>
 </tr>
 <tr class="odd">
-<td>71-75</td>
-<td></td>
-<td>Reserved</td>
-</tr>
-<tr class="even">
-<td>76</td>
-<td></td>
-<td>Reserved (known unauthorized use without proper IANA assignment) [**]</td>
-</tr>
-<tr class="odd">
-<td>77</td>
-<td></td>
-<td>Reserved (known unauthorized use without proper IANA assignment) [**]</td>
-</tr>
-<tr class="even">
-<td>78</td>
-<td></td>
-<td>Reserved (known unauthorized use without proper IANA assignment) [**]</td>
-</tr>
-<tr class="odd">
-<td>79-252</td>
-<td></td>
-<td>Reserved</td>
-</tr>
-<tr class="even">
 <td>253</td>
 <td>N</td>
-<td>RFC3692-style Experiment 1 (also improperly used for shipping products) [*] [RFC4727]</td>
+<td>RFC3692-style Experiment 1 (also improperly used for shipping products) [*]</td>
+<td>[RFC4727]</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>254</td>
 <td>N</td>
-<td>RFC3692-style Experiment 2 (also improperly used for shipping products) [*] [RFC4727]</td>
+<td>RFC3692-style Experiment 2 (also improperly used for shipping products) [*]</td>
+<td>[RFC4727]</td>
 </tr>
 </tbody>
 </table>
