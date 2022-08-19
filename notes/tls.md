@@ -41,6 +41,9 @@ DTLS support UDP at RFC 4347
 default SHA-256
 
 ## TLS 1.3
+- Faster hanshake
+- Key exchange parameters in suppoted_groups and key_share in the first Client Hello
+- Uses PSK instead of both of Session ID and Session Tiket are deprecated
 
 # Cipher suite
 A cipher suite is a set of algorithms that help secure network connection. The set of algorithms that ciper suites usually contain include: key exchange algorithm, bulk encryption algorithm, and message authnetication code(MAC).
