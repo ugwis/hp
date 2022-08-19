@@ -15,13 +15,14 @@ TCP implements the following to ensure reliability over an unreliable underlying
 - QoS
 
 # History
-## RFC 33: New HOST-HOST Protocol
+## Before standardized
+### RFC 33: New HOST-HOST Protocol
 It was finalized in RFC 33 in early 1970, and deployed to all nodes on the ARPANET in December 1970.
 
-## First paper "A Protocol for Packet Network Intercommunication."
+### First paper "A Protocol for Packet Network Intercommunication."
 Vinton Cerf and Robert Kahn submitted this at the IEEE Transactions on Communications conference in 1974.
 
-## RFC 675: SPECIFICATION OF INTERNET TRANSMISSION CONTROL PROGRAM
+### RFC 675: SPECIFICATION OF INTERNET TRANSMISSION CONTROL PROGRAM
 RFC 675 was published in December 1974, but it was not fully functional in 1974.
 
 ## RFC 793: TRANSMISSION CONTROL PROTOCOL
@@ -29,21 +30,22 @@ RFC 675 was revised and two separate RFCs:
 - RFC 791 “Internet Protocol”
 - RFC 793 “Transmission Control Protocol”
 
-## RFC 879: The TCP Maximum Segment Size
-## RFC 1011: OFFICIAL INTERNET PROTOCOLS
-## RFC 1122: Requirements for Internet Hosts -- Communication Layers
-## RFC 2581: TCP Congestion Control
-## RFC 2873: TCP Processing of the IPv4 Precedence Field
-## RFC 5681: TCP Congestion Control
-## RFC 5961: Improving TCP's Robustness to Blind In-Window Attacks
-## RFC 6013: TCP Cokkie Transactions (TCPCT)
-## RFC 6093: On the Implementation of the TCP Urgent Mechanism
-## RFC 6298: Computing TCP's Retransmission Timer
-## RFC 6429: TCP Sender Clarification for Persist Condition
-## RFC 6528: Defending against Sequence Number Attacks
-## RFC 6691: TCP Options and Maximum Segment Size (MSS)
-## RFC 7413: TCP Fast Open
-## RFC 793bis: Transmission Control Protocol (TCP) Specification
+## After standardized (some feature added and implemented)
+### RFC 879: The TCP Maximum Segment Size
+### RFC 1011: OFFICIAL INTERNET PROTOCOLS
+### RFC 1122: Requirements for Internet Hosts -- Communication Layers
+### RFC 2581: TCP Congestion Control
+### RFC 2873: TCP Processing of the IPv4 Precedence Field
+### RFC 5681: TCP Congestion Control
+### RFC 5961: Improving TCP's Robustness to Blind In-Window Attacks
+### RFC 6013: TCP Cokkie Transactions (TCPCT)
+### RFC 6093: On the Implementation of the TCP Urgent Mechanism
+### RFC 6298: Computing TCP's Retransmission Timer
+### RFC 6429: TCP Sender Clarification for Persist Condition
+### RFC 6528: Defending against Sequence Number Attacks
+### RFC 6691: TCP Options and Maximum Segment Size (MSS)
+### RFC 7413: TCP Fast Open
+### RFC 793bis: Transmission Control Protocol (TCP) Specification
 
 
 "IPv4" means 4th version of the original RFC ever published on the internet.
