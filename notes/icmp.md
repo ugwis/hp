@@ -1,7 +1,7 @@
 ---
 title: ICMP
 date: 2022-07-18
-hstyle:
+hstyle: ""
 ---
 # ICMP Parameters
 

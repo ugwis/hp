@@ -3,7 +3,7 @@ title: EDNS Client Subnet  (ECS) とは
 tags: dns edns
 author: ugwis
 slide: false
-hstyle: 
+hstyle: ""
 ---
 ## 従来の DNS の問題点
 多くの権威サーバはクライアントの位置によって異なるレスポンスを返すようになっています。
