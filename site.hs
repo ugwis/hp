@@ -42,6 +42,7 @@ main = hakyll $ do
             let archiveCtx =
                     listField "posts" postCtx (return posts) `mappend`
                     constField "title" "Archives"            `mappend`
+                    constField "hstyle" ""                   `mappend`
                     defaultContext
 
             makeItem ""
