@@ -1,5 +1,5 @@
 ---
 title: About
-hstyle: ""
+hstyle:
 ---
 aboutだけにアバウト
