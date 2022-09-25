@@ -59,6 +59,7 @@ main = hakyll $ do
                     listField "posts" postCtx (return posts) `mappend`
                     listField "notes" noteCtx (return notes) `mappend`
                     constField "title" "Home"                `mappend`
+                    constField "hstyle" ""                   `mappend`
                     defaultContext
 
             getResourceBody
