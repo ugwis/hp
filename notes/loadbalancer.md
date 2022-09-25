@@ -1,6 +1,7 @@
 ---
 title: Load Balancing basics
 date: 2021-01-18
+hstyle: background: url("/images/loadbalancer.png"); line-height: 300px;
 ---
 # About
 Basic functions
