@@ -102,6 +102,17 @@ Bandwidth can be increased by using several source interfaces when transmitting 
 <h1 id="other-features">Other features</h1>
 <h2 id="direct-server-return">Direct Server Return</h2>
 <p>This feature is L4 only. DSR returns the response directly to the client without going through the load balancer.</p>
+<p>Pros</p>
+<ul>
+<li>Return path does’t go through Load Balancer, so no need to consider Bandwidth for return path.</li>
+<li>No need additional section for Real Source IP address (eg. X-Forwarded-For, X-Real-IP, Proxy Protocol) By spoofing Source IP Address.</li>
+</ul>
+<p>Cons</p>
+<ul>
+<li>This feature requires Source-NAT</li>
+</ul>
+<h1 id="glossary">Glossary</h1>
+<h2 id="one-arm-topology">One-Arm topology</h2>
 
         </div>
         <div id="footer">
