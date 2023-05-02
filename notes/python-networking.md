@@ -23,7 +23,7 @@ import socket
 ADDR = socket.gethostbyname(socket.gethostname())
 PORT = 80
 
-with socket.socket() as s:
+with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.bind((ADDR, PORT))
     s.listen(5)
     
