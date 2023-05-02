@@ -102,3 +102,16 @@ GSLB is a method of hosting in multiple locations such as Tokyo and Osaka for di
 ## Direct Server Return
 This feature is L4 only.
 DSR returns the response directly to the client without going through the load balancer.
+
+Pros
+
+- Return path does't go through Load Balancer, so no need to consider Bandwidth for return path.
+- No need additional section for Real Source IP address (eg. X-Forwarded-For, X-Real-IP, Proxy Protocol) By spoofing Source IP Address.
+
+Cons
+
+- This feature requires Source-NAT
+
+# Glossary
+
+## One-Arm topology
